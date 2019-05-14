@@ -154,7 +154,7 @@ bool _startsWith(const char*a, const char* b){
   char s[512];
   sprintf(s,"%s",a);
   s[ strlen(b) ] =0;
-  return !stricmp(s,b);
+  return !strcasecmp(s,b);
 }
 void BrfBodyPart::InferTypeFromString(char* str){
   type = MANIFOLD;

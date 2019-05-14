@@ -7,7 +7,7 @@
 //#include <QtOpenGL>
 #include <QGLShaderProgram>
 #include <QMessageBox>
-#include <GL/glu.h>
+#include <OpenGL/glu.h>
 
 #include <math.h>
 

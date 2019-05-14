@@ -9,7 +9,8 @@ CONFIG += exceptions
 
 QMAKE_CXXFLAGS += -std=c++0x
 #QMAKE_CXXFLAGS += -Werror
-VCGLIB = /home/cory/Source/VCGLib
+#VCGLIB = /home/cory/Source/VCGLib
+VCGLIB = /Users/honghaoli/git_folder/vcglib
 QMAKE_CXXFLAGS += "-isystem $$VCGLIB"
 
 # RC_FILE = openBrf.rc
@@ -138,8 +139,8 @@ win32 {
 
 # SOURCES += "C:\projects\libraries\sources\glew-1.5.3\src\glew.c"
 #LIBS += -L"C:\projects\libraries\lib" \
-LIBS += "-lGLEW"
-LIBS += "-lGLU"
+# LIBS += "-lGLEW"
+# LIBS += "-lGLU"
 #   % -lglew32
 MOC_DIR = tmp
 UI_DIR = tmp
@@ -149,7 +150,7 @@ OTHER_FILES += shaders/bump_vertex.cpp
 OTHER_FILES += shaders/iron_fragment.cpp
 OTHER_FILES += femininizer.morpher
 
-LIBS += -lGL -lGLU
+# LIBS += -lGL -lGLU
 #LIBS += -lopengl32 -lglu32
 
 DISTFILES += \
