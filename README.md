@@ -19,17 +19,20 @@ I did some changes to make it run under MacOS.
     - change platform.cpp to include MacOS
 
 ### Build instructions for MacOS
-    # First Download the [VCGLIB](https://github.com/cnr-isti-vclab/vcglib)
-    # Then change the VCGLIB path in openBrf.pro to your own folder
+1. First Download the [VCGLIB](https://github.com/cnr-isti-vclab/vcglib)
+2. Then change the VCGLIB path in `openBrf.pro` to your own folder
+    ```
     VCGLIB = /home/cory/Source/VCGLib
-
-    # Requires Qt5!
+    ```
+3. Download/Install `Qt5`!
+    ```
     qmake -makefile openBrf.pro
     make
-    
-    # run it overriding the float dot notation so that it can load
-    # `carry_positions.txt` in other languages other than English
+    ```
+4. (Optional) run it overriding the float dot notation so that it can load `carry_positions.txt` in other languages other than English
+    ```
     env LC_NUMERIC=C ./openBrf
+    ```
 
 ### Notice
 1. A `reference.brf` file should be under `../Module/Native/` to use animation skeleton references.
