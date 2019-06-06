@@ -2,6 +2,7 @@
 //#include <QtGui>
 #include <QCompleter>
 #include <QMenu>
+#include <QDebug>
 
 #include "guipanel.h"
 #include "ui_guipanel.h"
@@ -456,6 +457,7 @@ void GuiPanel::setAnimation(const BrfAnimation* ){
 
 void GuiPanel::updateRefAnimation(){
   if (!reference) return;
+  qDebug() << "reference in updateRefAnimation: " << reference;
   int a=ui->cbRefani->currentIndex()-1;
   setRefAnimation(a);
 }
@@ -473,6 +475,7 @@ void GuiPanel::setReference(BrfData* r){
   reference = r;
   for (unsigned int i=0; i<r->animation.size(); i++)
     ui->cbRefani->addItem(r->animation[i].name);
+  qDebug() << "cbRefani count = " << ui->cbRefani->count();
 
   int n = r->GetFirstUnusedLetter();
   ui->cbSkin->clear();

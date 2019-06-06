@@ -839,6 +839,7 @@ void MainWindow::refreshReference(){
 		// attempt to use module spcific folder
 		QString fn = referenceFilename(1);
 		//qDebug("Trying to load '%s'",fn.toLatin1().data());
+		qDebug() << "Trying to load: " << fn;
 		if (reference.Load(fn.toStdWString().c_str())) {
 			loadedModReference = true;
 			loaded = true;
@@ -849,12 +850,15 @@ void MainWindow::refreshReference(){
 		loadedModReference = false;
 		QString fn = referenceFilename(0);
 		//qDebug("Trying to standard load '%s'",fn.toLatin1().data());
+		qDebug() << "Trying to load: " << fn;
 		if (reference.Load(fn.toStdWString().c_str()))  loaded = true;
 		quickHackFixName( reference );( reference );
 	}
 	if (loaded) {
 		guiPanel->setReference(&reference);
 		updateGui();
+	} else {
+		qCritical() << "Fail to load Mod Reference, " << __PRETTY_FUNCTION__;
 	}
 }
 
@@ -4255,6 +4259,8 @@ void MainWindow::updatePaths(){
 
 	settings->setValue("modName",modName);
 	settings->setValue("mabPath",mabPath);
+	qInfo() << "modeName: " << modName;
+	qInfo() << "mabPath: " << mabPath;
 }
 
 
@@ -5210,7 +5216,7 @@ bool MainWindow::refreshSkeletonBodiesXml(){
 
 
 	QString fn = modPath()+"/Data/skeleton_bodies.xml";
-    qDebug("LOADING: %ls" , fn.toStdWString().c_str());
+	qDebug() << "LOADING: " << fn;
     int res = hitboxSet.LoadHitBoxesFromXml(fn.toStdWString().c_str());
 
 	// if file not found: try reading default path

@@ -2,3 +2,9 @@
 *~
 tmp
 qrc_resource.cpp
+openBrf.app
+openBrf.app/*
+.idea/
+CMake*
+cmake*
+openBrf.*

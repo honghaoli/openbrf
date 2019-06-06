@@ -2,6 +2,11 @@
 
 #include "brfData.h"
 
+#include<QDebug>
+#include <iostream>
+#include <stdio.h>
+#include <string>
+
 #include "saveLoad.h"
 #include "platform.h"
 
@@ -210,8 +215,11 @@ void  BrfData::Merge(const BrfData& b){
 
 
 bool BrfData::Load(const wchar_t *filename,int verbose, int imposeVersion){
-  FILE *f = wfopen(filename,"rb");
-  if (!f) return false;
+  FILE *f = wfopen(filename, "rb");
+  if (!f) {
+    qCritical() << "Cannot load BrfData!!!";
+    return false;
+  }
   return Load(f, verbose, imposeVersion);
 }
 
@@ -317,6 +325,7 @@ void  BrfData::LoadVersion(FILE*f,int imposeVers){
 
 
 bool BrfData::Load(FILE*f,int verbose,int imposeVers){
+  qInfo() << "    Start to Load BrfData FILE.";
 
   Clear();
 
@@ -346,6 +355,7 @@ bool BrfData::Load(FILE*f,int verbose,int imposeVers){
     }
 
   }
+  qInfo() << "    Successfully Loaded BrfData FILE.";
   fclose(f);
   return true;
 }

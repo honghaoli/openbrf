@@ -17,7 +17,6 @@ extern const char* applVersion;
 
 int main(int argc, char** argv)
 {
-
   Q_INIT_RESOURCE(resource);
 
   QString nextTranslator;

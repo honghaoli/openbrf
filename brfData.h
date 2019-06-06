@@ -42,7 +42,7 @@ public:
 	vector<BrfAnimation> animation;
 	vector<BrfBody> body;
 	bool Load(FILE*f,int verbose=0, int imposeVers = -1);
-	bool Load(const wchar_t*filename,int verbose=1, int imposeVers = -1);
+    bool Load(const wchar_t* filename,int verbose=1, int imposeVers = -1);
 
 	int LoadHitBoxesFromXml(const wchar_t*filename); // loads all hitboxes as collision meshes form skeleton_data.xml
 	int SaveHitBoxesToXml(const wchar_t *fin, const wchar_t *fout);
