@@ -7,8 +7,7 @@ The original source code ZIP file at [talewords forum](https://forums.taleworlds
 
 This repo is forked from Linux version [cfcohen/openbrf](https://github.com/cfcohen/openbrf)
 
-I did some changes to make it run under MacOS.
-### For MacOS
+### What I changed for MacOS
 1. Change GL to OpenGL
     ```
     #include <GL/glu.h>
@@ -34,7 +33,7 @@ I did some changes to make it run under MacOS.
     env LC_NUMERIC=C ./openBrf
     ```
 
-### Notice
+### Note
 1. A `reference.brf` file should be under `../Module/Native/` to use animation skeleton references.
 2. A `skeleton_bodies.xml` file should be under `../Module/Native/Data/` to use the hitboxes.
 
